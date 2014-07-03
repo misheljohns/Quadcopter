@@ -25,6 +25,7 @@ boolean flying = false;
 
 void setup() 
 { 
+  digitalWrite(ledPin, LOW);
   Serial.begin(115200);  // initialize serial communication:
   Wire.begin();
   
@@ -34,66 +35,20 @@ void setup()
   motor[1].attach(5);
   motor[2].attach(6);
   motor[3].attach(9);  // attaches the servo on pin 11 to the servo object 
-  /*
-  currSpeed[0] = 2000;
-  currSpeed[1] = 2000;
-  currSpeed[2] = 2000;
-  currSpeed[3] = 2000;
   
-  setSpeeds(); //set everything to 2000
+  currSpeed[0] = 800;
+  currSpeed[1] = 800;
+  currSpeed[2] = 800;
+  currSpeed[3] = 800;
+  
+  setSpeeds(); //set everything to 800 (LOW)
   
   digitalWrite(ledPin, HIGH);
   
-  delay(1000); //wait for 5 seconds
+  delay(5000); //wait for 5 seconds
   
-  //after beep beep,
+  //after beep beep, ready to fly
   
-  
-  currSpeed[0] = 1000;
-  currSpeed[1] = 1000;
-  currSpeed[2] = 1000;
-  currSpeed[3] = 1000;
-  
-  setSpeeds(); //set everything to 1000
-  
-  digitalWrite(ledPin, LOW);
-  */
-  
-  //motor[0].writeMicroseconds(2000);
-  motor[0].write(0);
-
-  Serial.println("Attach battery");
-  delay(5000);
-  Serial.println(motor[0].read());
-  //motor[0].writeMicroseconds(1000);
-  motor[0].write(180);
-  delay(1000); //wait for 3 seconds
-  motor[0].write(100);
-  //startFlying();
-  
-  
-  delay(2000);
-  Serial.println(motor[0].read());
-  /*
-  setmotorSpeed(1,1500);
-  setmotorSpeed(2,1500);
-  setmotorSpeed(3,1500);
-  setmotorSpeed(4,1500);
-  */
-  /*
-  currSpeed[0] = 1500;
-  currSpeed[1] = 1500;
-  currSpeed[2] = 1500;
-  currSpeed[3] = 1500;
-  
-  setSpeeds(); //set everything to 2000
-  
-  digitalWrite(ledPin, HIGH); //hi guys, I'm ready!
-  
-  delay(1000); //wait for a second
-  
-  digitalWrite(ledPin, LOW);
-  */
   //Serial.println("Starting Quadcopter");
 } 
  
@@ -102,18 +57,7 @@ void loop()
 { 
   
   readSensors();
-  
-  if(flying)
-  {
-    //control code here
-    PIDcontrolFly();
-  } 
- //only for now 
-  else
-  {
-    startFlying();
-  }
-  
+  PIDcontrolFly();
   
 }
 
