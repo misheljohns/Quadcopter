@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_diagnostics"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Diagnostics"/>
+    
+    <item 
+        android:id="@+id/action_connect" 
+        android:showAsAction="never"
+        android:title="Connect" />
+    
+    
+    
+
+</menu>
