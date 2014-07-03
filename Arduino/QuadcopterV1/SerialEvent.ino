@@ -63,19 +63,19 @@ void serialEvent() {
     }
     else if (instrCode== 'A') { //Motor1
       instrVal = Serial.parseInt();
-      setSpeed(0,instrVal);      
+      setmotorSpeed(0,instrVal);      
     }
     else if (instrCode== 'B') { //Motor2
       instrVal = Serial.parseInt();
-      setSpeed(1,instrVal);      
+      setmotorSpeed(1,instrVal);      
     }
     else if (instrCode== 'C') { //Motor3
       instrVal = Serial.parseInt();
-      setSpeed(2,instrVal);      
+      setmotorSpeed(2,instrVal);      
     }
     else if (instrCode== 'D') { //Motor4
       instrVal = Serial.parseInt();
-      setSpeed(3,instrVal);      
+      setmotorSpeed(3,instrVal);      
     }
     else if (instrCode== 'I') { //Read Accelerometer/Gyro Values
       Serial.print("Ax: \t");

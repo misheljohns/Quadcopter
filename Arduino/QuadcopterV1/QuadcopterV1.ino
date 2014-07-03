@@ -34,12 +34,66 @@ void setup()
   motor[1].attach(5);
   motor[2].attach(6);
   motor[3].attach(9);  // attaches the servo on pin 11 to the servo object 
+  /*
+  currSpeed[0] = 2000;
+  currSpeed[1] = 2000;
+  currSpeed[2] = 2000;
+  currSpeed[3] = 2000;
   
-  currSpeed[0] = 0;
-  currSpeed[1] = 0;
-  currSpeed[2] = 0;
-  currSpeed[3] = 0;
+  setSpeeds(); //set everything to 2000
   
+  digitalWrite(ledPin, HIGH);
+  
+  delay(1000); //wait for 5 seconds
+  
+  //after beep beep,
+  
+  
+  currSpeed[0] = 1000;
+  currSpeed[1] = 1000;
+  currSpeed[2] = 1000;
+  currSpeed[3] = 1000;
+  
+  setSpeeds(); //set everything to 1000
+  
+  digitalWrite(ledPin, LOW);
+  */
+  
+  //motor[0].writeMicroseconds(2000);
+  motor[0].write(0);
+
+  Serial.println("Attach battery");
+  delay(5000);
+  Serial.println(motor[0].read());
+  //motor[0].writeMicroseconds(1000);
+  motor[0].write(180);
+  delay(1000); //wait for 3 seconds
+  motor[0].write(100);
+  //startFlying();
+  
+  
+  delay(2000);
+  Serial.println(motor[0].read());
+  /*
+  setmotorSpeed(1,1500);
+  setmotorSpeed(2,1500);
+  setmotorSpeed(3,1500);
+  setmotorSpeed(4,1500);
+  */
+  /*
+  currSpeed[0] = 1500;
+  currSpeed[1] = 1500;
+  currSpeed[2] = 1500;
+  currSpeed[3] = 1500;
+  
+  setSpeeds(); //set everything to 2000
+  
+  digitalWrite(ledPin, HIGH); //hi guys, I'm ready!
+  
+  delay(1000); //wait for a second
+  
+  digitalWrite(ledPin, LOW);
+  */
   //Serial.println("Starting Quadcopter");
 } 
  

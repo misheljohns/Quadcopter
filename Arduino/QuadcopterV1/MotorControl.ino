@@ -10,7 +10,7 @@ void setSpeeds()
 }
 
 //Power up each motor
-void setSpeed(byte motorno, int motorspeed)
+void setmotorSpeed(byte motorno, int motorspeed)
 {
   digitalWrite(ledPin, HIGH);  //LED will be on while the speed changes
   if(motorspeed > currSpeed[motorno])

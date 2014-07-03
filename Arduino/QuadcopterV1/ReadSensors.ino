@@ -1,7 +1,7 @@
 byte gyroin[6];
 
 void readSensors() {
-  Serial.println("start readsensors");
+  //Serial.println("start readsensors");
   //read accelerometer input
   accx = analogRead(0);
   accy = analogRead(1);
