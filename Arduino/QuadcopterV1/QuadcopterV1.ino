@@ -17,10 +17,14 @@ int currSpeed[4];  //store motor speed
 int accx = 0, accy = 0, accz = 0;
 int rotx = 0, roty = 0, rotz = 0;
 
+float Y = 0, P = 0, R = 0;
+  
 char instrCode = 0;
 int instrVal = 0;
 
 boolean flying = false;
+
+int Xin = 0,Yin = 0,Zin = 0;
 
 
 void setup() 
@@ -30,6 +34,7 @@ void setup()
   Wire.begin();
   
   pinMode(ledPin, OUTPUT);  // initialize the LED pin as an output
+  Serial3.begin(57600);
   
   motor[0].attach(3);
   motor[1].attach(5);
@@ -45,10 +50,11 @@ void setup()
   
   digitalWrite(ledPin, HIGH);
   
-  delay(5000); //wait for 5 seconds
+  delay(1000); //wait for 5 seconds
   
   //after beep beep, ready to fly
   
+  startFlying();
   //Serial.println("Starting Quadcopter");
 } 
  

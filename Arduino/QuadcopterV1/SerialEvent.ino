@@ -11,6 +11,7 @@
 
 //change to fixed length string?
 
+
 void serialEvent() {
   while (Serial.available()) {
     //char inChar = (char)Serial.read(); 
@@ -27,7 +28,7 @@ void serialEvent() {
     
     instrCode = (char)Serial.read();
     Serial.print(instrCode);
-    
+        
     if (instrCode== 'S') { //stop!
       stopFlying();
     }
@@ -38,15 +39,15 @@ void serialEvent() {
       startFlying();
     }
     else if (instrCode== 'X') { //Forward-Backward
-      instrVal = Serial.parseInt();
+      Xin = Serial.parseInt();
             
     }
     else if (instrCode== 'Z') { //Up-Down
-      instrVal = Serial.parseInt();
+      Zin = Serial.parseInt();
             
     }
     else if (instrCode== 'Y') { //Right-Left
-      instrVal = Serial.parseInt();
+      Yin = Serial.parseInt();
             
     }
     else if (instrCode== 'R') { //Roll
@@ -87,6 +88,31 @@ void serialEvent() {
       Serial.println("");
     }
     
+  }
+}
+void serialEvent3(){
+  int ypr_count = 0;
+  
+  while (Serial3.available()){
+    while(true) {
+      float f = Serial3.parseFloat();
+      
+      if (ypr_count == 0) Y = f;
+      else if (ypr_count == 1) P = f;
+      else if (ypr_count == 2) R = f;
+      
+      ypr_count++;
+      if (Serial3.read() != '\n') break;
+    }
+    ypr_count = 0;
+    
+    Serial.print("Values: ");
+    Serial.print(Y);
+    Serial.print(" ");
+    Serial.print(P);
+    Serial.print(" ");
+    Serial.print(R);
+    Serial.print("\n");
   }
 }
 
