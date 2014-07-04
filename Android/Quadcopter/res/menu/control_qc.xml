@@ -10,6 +10,7 @@
         android:id="@+id/action_connect" 
         android:showAsAction="never"
         android:title="Connect" />
+    <item android:id="@+id/action_sendm" android:title="Start Send" android:showAsAction="never"></item>
     
     
     

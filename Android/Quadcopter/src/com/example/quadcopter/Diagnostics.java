@@ -30,6 +30,11 @@ public class Diagnostics extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_diagnostics);
+	}
+	
+	@Override
+	protected void onStart() {
+		super.onStart();
 		startBt();
 	}
 
@@ -254,10 +259,15 @@ public class Diagnostics extends Activity {
     @Override 
 	protected void onDestroy() {
 		super.onDestroy();
-		stop();
 	}
     
-	public synchronized void stop() {
+    @Override 
+  	protected void onStop() {
+  		super.onStop();
+  		stopBt();
+  	}
+      
+	public synchronized void stopBt() {
 
 		if (mConnectThread != null) {
 			mConnectThread.cancel();

@@ -36,7 +36,8 @@ public final class R {
         public static final int Button08=0x7f08000d;
         public static final int action_connect=0x7f08000f;
         public static final int action_diagnostics=0x7f08000e;
-        public static final int action_settings=0x7f080010;
+        public static final int action_sendm=0x7f080010;
+        public static final int action_settings=0x7f080011;
         public static final int button1=0x7f080004;
         public static final int button2=0x7f080005;
         public static final int editText1=0x7f080003;
